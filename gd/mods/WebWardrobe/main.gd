@@ -5,6 +5,8 @@ var saved_outfits: Dictionary = {}
 const file_path = "user://outfits.json"
 
 func _ready():
+	print("WAHAHDWHAUIDJWALODHWAGYTBHDBJNMWA<KLDUWHAUYGDHJWAKLDUIWAHYGDGHJBWANM<DHAJWUYGDHGJAWNDHAWUYGDHJAWNMD")
+	print("path " + get_path())
 	load_outfits_from_file()
 
 func load_outfit(name: String) -> bool:
@@ -25,17 +27,7 @@ func save_outfit(name: String) -> bool:
 func del_outfit(name: String):
 	saved_outfits.erase(name)
 
-func _input(event):
-	if Input.is_action_just_pressed("menu_open"):
-		inject()
-
-func inject():
-	var player = find_player()
-	if player == null: return
-	
-	var hud: Node = player.hud
-	if hud == null: return
-	
+func _inject(hud):
 	var main: Node = hud.get_child(0)
 	if main == null: return
 	
@@ -56,7 +48,15 @@ func inject():
 	outfits_tab.name = "outfits"
 	outfits_tab._setup(self)
 	tabs.add_child(outfits_tab)
+
+func _find_and_inject():
+	var player = find_player()
+	if player == null: return
 	
+	var hud: Node = player.hud
+	if hud == null: return
+	
+	_init(hud)
 
 func _button_clicked(menu):
 	menu._change_tab("outfits")

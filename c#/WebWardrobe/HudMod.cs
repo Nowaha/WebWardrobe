@@ -15,6 +15,14 @@ internal class HudMod : IScriptMod
             t => t.Type == TokenType.Newline,
         ], allowPartialMatch: true);
 
+        // func _ready():
+        var onready = new MultiTokenWaiter([
+            t => t.Type == TokenType.PrFunction,
+            t => t is IdentifierToken { Name: "_ready" },
+            t => t.Type == TokenType.Colon,
+            t => t.Type == TokenType.Newline,
+        ], allowPartialMatch: true);
+
         // 	if popups == [] and not OptionsMenu.open:
         var check = new MultiTokenWaiter([
             t => t.Type == TokenType.CfIf,
@@ -37,7 +45,32 @@ internal class HudMod : IScriptMod
                 yield return new Token(TokenType.OpAssign);
                 yield return new ConstantToken(new BoolVariant(false));
                 yield return new Token(TokenType.Newline);
-            } else if (check.Check(token))
+
+                // onready var webwardrobe_mod = get_node("/root/WebWardrobe")
+                yield return new Token(TokenType.PrOnready);
+                yield return new Token(TokenType.PrVar);
+                yield return new IdentifierToken("webwardrobe_mod");
+                yield return new Token(TokenType.OpAssign);
+                yield return new IdentifierToken("get_node");
+                yield return new Token(TokenType.ParenthesisOpen);
+                yield return new ConstantToken(new StringVariant("/root/WebWardrobe"));
+                yield return new Token(TokenType.ParenthesisClose);
+                yield return new Token(TokenType.Newline);
+            }
+            else if (onready.Check(token))
+            {
+                yield return token;
+
+                // webwardrobe_mod._inject(self)
+                yield return new IdentifierToken("webwardrobe_mod");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("_inject");
+                yield return new Token(TokenType.ParenthesisOpen);
+                yield return new Token(TokenType.Self);
+                yield return new Token(TokenType.ParenthesisClose);
+                yield return new Token(TokenType.Newline, 1);
+            }
+            else if (check.Check(token))
             {
                 yield return token;
 
