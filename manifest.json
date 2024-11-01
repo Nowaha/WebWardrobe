@@ -1,0 +1,10 @@
+{
+    "Id": "WebWardrobe",
+    "PackPath": "WebWardrobe.pck",
+    "Metadata": {
+        "Name": "WebWardrobe",
+        "Author": "Nowaha",
+        "Version": "1.0.0",
+        "Description": "Load and save outfits!"
+    }
+}

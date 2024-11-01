@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+hint_tooltip = "hi"
+size_flags_horizontal = 3
+
+[node name="OutfitButton" type="Button" parent="."]
+margin_right = 91.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "Outfit Name"
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_left = 95.0
+margin_right = 103.0
+margin_bottom = 40.0
+custom_constants/separation = 8
+custom_styles/separator = SubResource( 1 )
+
+[node name="DelButton" type="Button" parent="."]
+margin_left = 107.0
+margin_right = 179.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 72, 0 )
+text = "Delete"
