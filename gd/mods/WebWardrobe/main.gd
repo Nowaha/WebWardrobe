@@ -54,7 +54,7 @@ func _find_and_inject():
 	var hud: Node = player.hud
 	if hud == null: return
 	
-	_init(hud)
+	_inject(hud)
 
 func _button_clicked(menu):
 	menu._change_tab("outfits")
