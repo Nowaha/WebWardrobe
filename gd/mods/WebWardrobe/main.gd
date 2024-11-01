@@ -5,8 +5,6 @@ var saved_outfits: Dictionary = {}
 const file_path = "user://outfits.json"
 
 func _ready():
-	print("WAHAHDWHAUIDJWALODHWAGYTBHDBJNMWA<KLDUWHAUYGDHJWAKLDUIWAHYGDGHJBWANM<DHAJWUYGDHGJAWNDHAWUYGDHJAWNMD")
-	print("path " + get_path())
 	load_outfits_from_file()
 
 func load_outfit(name: String) -> bool:
