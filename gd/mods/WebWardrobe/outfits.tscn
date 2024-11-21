@@ -44,7 +44,7 @@ margin_right = 628.0
 margin_bottom = 42.0
 
 [node name="LineEdit" type="LineEdit" parent="ScrollContainer/HBoxContainer/vbox/HBoxContainer"]
-margin_right = 540.0
+margin_right = 464.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 max_length = 32
@@ -52,17 +52,25 @@ shortcut_keys_enabled = false
 placeholder_text = "Name"
 
 [node name="VSeparator" type="VSeparator" parent="ScrollContainer/HBoxContainer/vbox/HBoxContainer"]
-margin_left = 544.0
-margin_right = 552.0
+margin_left = 468.0
+margin_right = 476.0
 margin_bottom = 24.0
 custom_constants/separation = 8
 custom_styles/separator = SubResource( 1 )
 
 [node name="SaveButton" type="Button" parent="ScrollContainer/HBoxContainer/vbox/HBoxContainer"]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_left = 480.0
+margin_right = 552.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 72, 0 )
 text = "Save"
+
+[node name="ReloadButton" type="Button" parent="ScrollContainer/HBoxContainer/vbox/HBoxContainer"]
+margin_left = 556.0
+margin_right = 628.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 72, 0 )
+text = "Reload"
 
 [node name="HSeparator" type="HSeparator" parent="ScrollContainer/HBoxContainer/vbox"]
 margin_top = 46.0
@@ -82,8 +90,9 @@ valign = 1
 [node name="outfits_cont" type="VBoxContainer" parent="ScrollContainer/HBoxContainer/vbox"]
 margin_top = 84.0
 margin_right = 628.0
-margin_bottom = 128.0
+margin_bottom = 84.0
 
 [connection signal="focus_entered" from="ScrollContainer/HBoxContainer/vbox/HBoxContainer/LineEdit" to="." method="_on_LineEdit_focus_entered"]
 [connection signal="focus_exited" from="ScrollContainer/HBoxContainer/vbox/HBoxContainer/LineEdit" to="." method="_on_LineEdit_focus_exited"]
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/vbox/HBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/vbox/HBoxContainer/ReloadButton" to="." method="_on_ReloadButton_pressed"]

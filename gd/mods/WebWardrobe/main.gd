@@ -24,6 +24,10 @@ func save_outfit(name: String) -> bool:
 	
 func del_outfit(name: String):
 	saved_outfits.erase(name)
+	
+func reload_outfits() -> bool:
+	load_outfits_from_file()
+	return true
 
 func _inject(hud):
 	var main: Node = hud.get_child(0)

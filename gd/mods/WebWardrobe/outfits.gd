@@ -60,3 +60,11 @@ func _on_SaveButton_pressed():
 		PlayerData._send_notification("failed to save outfit", 1)
 	
 	_refresh()
+
+
+func _on_ReloadButton_pressed():
+	if mod.reload_outfits():
+		PlayerData._send_notification("reloaded outfits", 0)
+	else:
+		PlayerData._send_notification("failed to reload outfits", 1)
+	_refresh()
