@@ -13,12 +13,12 @@ func load_outfit(name: String) -> bool:
 	var player = find_player()
 	if player == null: return false
 	
-	PlayerData.cosmetics_equipped = saved_outfits[name].duplicate()
+	PlayerData.cosmetics_equipped = saved_outfits[name].duplicate(true)
 	player._change_cosmetics()
 	return true
 
 func save_outfit(name: String) -> bool:
-	saved_outfits[name] = PlayerData.cosmetics_equipped.duplicate()
+	saved_outfits[name] = PlayerData.cosmetics_equipped.duplicate(true)
 	save_outfits_to_file()
 	return true
 	
