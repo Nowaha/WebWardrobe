@@ -44,7 +44,7 @@ margin_right = 628.0
 margin_bottom = 42.0
 
 [node name="LineEdit" type="LineEdit" parent="ScrollContainer/HBoxContainer/vbox/HBoxContainer"]
-margin_right = 464.0
+margin_right = 456.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 max_length = 32
@@ -52,18 +52,25 @@ shortcut_keys_enabled = false
 placeholder_text = "Name"
 
 [node name="VSeparator" type="VSeparator" parent="ScrollContainer/HBoxContainer/vbox/HBoxContainer"]
-margin_left = 468.0
-margin_right = 476.0
+margin_left = 460.0
+margin_right = 468.0
 margin_bottom = 24.0
 custom_constants/separation = 8
 custom_styles/separator = SubResource( 1 )
 
 [node name="SaveButton" type="Button" parent="ScrollContainer/HBoxContainer/vbox/HBoxContainer"]
-margin_left = 480.0
-margin_right = 552.0
+margin_left = 472.0
+margin_right = 544.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 72, 0 )
 text = "Save"
+
+[node name="VSeparator2" type="VSeparator" parent="ScrollContainer/HBoxContainer/vbox/HBoxContainer"]
+margin_left = 548.0
+margin_right = 552.0
+margin_bottom = 24.0
+custom_constants/separation = 2
+custom_styles/separator = SubResource( 1 )
 
 [node name="ReloadButton" type="Button" parent="ScrollContainer/HBoxContainer/vbox/HBoxContainer"]
 margin_left = 556.0
