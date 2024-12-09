@@ -24,6 +24,7 @@ func save_outfit(name: String) -> bool:
 	
 func del_outfit(name: String):
 	saved_outfits.erase(name)
+	save_outfits_to_file()
 	
 func reload_outfits() -> bool:
 	load_outfits_from_file()
