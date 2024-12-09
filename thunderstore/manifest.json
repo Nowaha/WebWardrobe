@@ -1,7 +1,7 @@
 {
     "name": "WebWardrobe",
     "description": "A WEBFISHING mod that allows you to store & switch between different outfits!",
-    "version_number": "1.0.4",
+    "version_number": "1.0.5",
     "website_url": "https://github.com/Nowaha/WebWardrobe",
     "dependencies": [
         "NotNet-GDWeave-2.0.12"
